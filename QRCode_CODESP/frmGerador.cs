@@ -13,7 +13,9 @@ namespace QRCode_CODESP
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            if (txtInfo.Text == String.Empty)
+            string informacoes = txtInfo.Text.TrimEnd().TrimStart();
+
+            if (informacoes == String.Empty)
                 MessageBox.Show("O campo informações é obrigatório", "Administrador");
             else
                 picQRCode.Image = QRCode(200, 200, txtInfo.Text);
